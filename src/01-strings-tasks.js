@@ -209,7 +209,7 @@ function getRectangleString(/* width, height */) {
   // const rectangle3 = `└${('─').repeat(width - 2)}┘\n`;
 
 
-  // return rectangle1 + rectangle2 + rectangle3;
+  // return `${rectangle1} + ${rectangle2} + ${rectangle3}`;
   throw new Error('Not implemented');
 }
 
