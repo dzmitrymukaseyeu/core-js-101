@@ -66,8 +66,19 @@ function getPowerFunction(exponent) {
  *   getPolynom(8)     => y = 8
  *   getPolynom()      => null
  */
-function getPolynom() {
-  throw new Error('Not implemented');
+function getPolynom(...num) {
+  return function func(x) {
+    if (!num.length) {
+      return null;
+    }
+    if (num.length === 1) {
+      return num[0];
+    }
+    if (num.length === 2) {
+      return num[0] * x + num[1];
+    }
+    return num[0] * (x ** 2) + num[1] * x + num[2];
+  };
 }
 
 
@@ -173,8 +184,12 @@ function partialUsingArguments(/* fn, ...args1 */) {
  *   getId4() => 7
  *   getId10() => 11
  */
-function getIdGeneratorFunction(/* startFrom */) {
-  throw new Error('Not implemented');
+function getIdGeneratorFunction(startFrom) {
+  let x = startFrom - 1;
+  return function func() {
+    x += 1;
+    return x;
+  };
 }
 
 
